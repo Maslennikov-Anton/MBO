@@ -1,10 +1,8 @@
 package ui;
 
-import org.junit.AfterClass;
-import org.junit.BeforeClass;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.WebDriver;
-import pgobj.LoadDriver;
+import pgobj.Servant;
 import pgobj.RegisterPage;
 import pgobj.User;
 
@@ -15,7 +13,7 @@ public class Sign_up {
 
     @BeforeAll
     public static void SWd(){
-       driver = LoadDriver.CurrDriver();
+       driver = new Servant().CurrDriver();
        driver.get("http://dev-mbo.mostbet.ru/login");
     }
 

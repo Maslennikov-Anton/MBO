@@ -4,9 +4,8 @@ import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import pgobj.FirstPage;
-import pgobj.LoadDriver;
+import pgobj.Servant;
 import pgobj.RegisterPage;
 import pgobj.User;
 
@@ -16,7 +15,7 @@ public class Users {
 
     @BeforeAll
     public static void SWd(){
-        driver = LoadDriver.CurrDriver();
+        driver = new Servant().CurrDriver();
         driver.get("http://dev-mbo.mostbet.ru/login");
     }
 
@@ -36,6 +35,13 @@ public class Users {
         RegisterPage page = new RegisterPage(driver);
         FirstPage fppage = page.SuccessRegister(user);
                   fppage.Users();
+
+        try {
+            Thread.sleep(10000);
+        }catch (InterruptedException e) {
+
+        }
+
 
 
     }
